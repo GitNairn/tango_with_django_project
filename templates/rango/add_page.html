@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rango</title>
+    </head>
+    <body>
+        <div>
+
+            {% block title %}Add Page{% endblock %}
+
+            {% block body_block %}
+            <h1>Add a New Page to {{ category.name }}</h1>
+            <form method="post" action="">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" name="submit" value="Add Page">
+            </form>
+            {% endblock %}
+
+        </div>
+        <div>
+            <a href="/rango/category/{{category.slug }}/add_category/">Add Category</a>
+        </div>
+    </body>
+</html>

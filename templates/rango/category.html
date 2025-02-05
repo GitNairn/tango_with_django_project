@@ -25,6 +25,11 @@
         </div>
         <div>
             <a href="/rango/">Index</a><br />
+            {% if category.slug %}
+                <a href="{% url 'rango:add_page' category.slug %}">Add a New Page</a>
+            {% else %}
+                <p>Error: No slug available for this category.</p>
+            {% endif %}
         </div>
     </body>
 </html>
